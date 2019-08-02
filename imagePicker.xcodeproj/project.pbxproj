@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04018A5322F406A500C65676 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04018A5222F406A500C65676 /* TableViewController.swift */; };
+		04018A5522F406C300C65676 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04018A5422F406C300C65676 /* CollectionViewController.swift */; };
+		04018A5722F407AE00C65676 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04018A5622F407AE00C65676 /* CollectionViewCell.swift */; };
+		04018A5B22F4534500C65676 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04018A5A22F4534500C65676 /* TableViewCell.swift */; };
 		04BFCF8122DF5632005308E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BFCF8022DF5632005308E1 /* AppDelegate.swift */; };
 		04BFCF8322DF5632005308E1 /* MemeGenerationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BFCF8222DF5632005308E1 /* MemeGenerationViewController.swift */; };
 		04BFCF8622DF5632005308E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04BFCF8422DF5632005308E1 /* Main.storyboard */; };
@@ -14,9 +18,14 @@
 		04BFCF8B22DF5634005308E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04BFCF8922DF5634005308E1 /* LaunchScreen.storyboard */; };
 		04BFCF9322E07349005308E1 /* TopTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BFCF9222E07349005308E1 /* TopTextFieldDelegate.swift */; };
 		04BFCF9522E07362005308E1 /* BottomTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BFCF9422E07362005308E1 /* BottomTextFieldDelegate.swift */; };
+		04DE98F022F2F637009C8506 /* DataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DE98EF22F2F637009C8506 /* DataStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04018A5222F406A500C65676 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		04018A5422F406C300C65676 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		04018A5622F407AE00C65676 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		04018A5A22F4534500C65676 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		04BFCF7D22DF5632005308E1 /* imagePicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = imagePicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04BFCF8022DF5632005308E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04BFCF8222DF5632005308E1 /* MemeGenerationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeGenerationViewController.swift; sourceTree = "<group>"; };
@@ -26,6 +35,7 @@
 		04BFCF8C22DF5634005308E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04BFCF9222E07349005308E1 /* TopTextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTextFieldDelegate.swift; sourceTree = "<group>"; };
 		04BFCF9422E07362005308E1 /* BottomTextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTextFieldDelegate.swift; sourceTree = "<group>"; };
+		04DE98EF22F2F637009C8506 /* DataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +69,11 @@
 			isa = PBXGroup;
 			children = (
 				04BFCF8022DF5632005308E1 /* AppDelegate.swift */,
+				04018A5222F406A500C65676 /* TableViewController.swift */,
+				04018A5A22F4534500C65676 /* TableViewCell.swift */,
+				04018A5422F406C300C65676 /* CollectionViewController.swift */,
+				04018A5622F407AE00C65676 /* CollectionViewCell.swift */,
+				04DE98EF22F2F637009C8506 /* DataStorage.swift */,
 				04BFCF8222DF5632005308E1 /* MemeGenerationViewController.swift */,
 				04BFCF8422DF5632005308E1 /* Main.storyboard */,
 				04BFCF8722DF5634005308E1 /* Assets.xcassets */,
@@ -142,7 +157,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				04BFCF8322DF5632005308E1 /* MemeGenerationViewController.swift in Sources */,
+				04018A5322F406A500C65676 /* TableViewController.swift in Sources */,
+				04018A5722F407AE00C65676 /* CollectionViewCell.swift in Sources */,
 				04BFCF9522E07362005308E1 /* BottomTextFieldDelegate.swift in Sources */,
+				04018A5B22F4534500C65676 /* TableViewCell.swift in Sources */,
+				04DE98F022F2F637009C8506 /* DataStorage.swift in Sources */,
+				04018A5522F406C300C65676 /* CollectionViewController.swift in Sources */,
 				04BFCF8122DF5632005308E1 /* AppDelegate.swift in Sources */,
 				04BFCF9322E07349005308E1 /* TopTextFieldDelegate.swift in Sources */,
 			);

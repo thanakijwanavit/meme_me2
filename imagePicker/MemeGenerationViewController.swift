@@ -113,6 +113,7 @@ class MemeGenerationViewController: UIViewController, UIImagePickerControllerDel
         imageToDisplay.image = nil
         checkImageHideButton()
     }
+    
     /// finish or cancel image pick
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[.originalImage] as? UIImage {
@@ -123,6 +124,7 @@ class MemeGenerationViewController: UIViewController, UIImagePickerControllerDel
             dismiss(animated: true, completion: nil)
         }
     }
+    
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
@@ -134,11 +136,9 @@ class MemeGenerationViewController: UIViewController, UIImagePickerControllerDel
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-    
     func unsubscribeFromKeyboardNotification(){
         NotificationCenter.default.removeObserver(UIResponder.keyboardWillShowNotification)
     }
-
     @objc func keyboardWillShow(_ notification:Notification) {
         if (self.bottomText.isEditing){
             view.frame.origin.y = -getKeyboardHeight(notification)
@@ -150,14 +150,12 @@ class MemeGenerationViewController: UIViewController, UIImagePickerControllerDel
             view.frame.origin.y = 0
         }
     }
-    
     func getKeyboardHeight(_ notification:Notification) -> CGFloat {
         
         let userInfo = notification.userInfo
         let keyboardSize = userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue // of CGRect
         return keyboardSize.cgRectValue.height
     }
-    
     
     /// hide keyboard
     //Calls this function when the tap is recognized.
@@ -175,6 +173,8 @@ class MemeGenerationViewController: UIViewController, UIImagePickerControllerDel
         let meme = Meme(topText: topText.text!, bottomText: bottomText.text!, originalImage: imageToDisplay.image!, memedImage: memedImage!)
         UIImageWriteToSavedPhotosAlbum(meme.memedImage, nil , nil, nil)
         self.meme = meme
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.memes.append(meme)
         
     }
     
@@ -202,17 +202,11 @@ class MemeGenerationViewController: UIViewController, UIImagePickerControllerDel
         hideToolbars(false)
         return memedImage
     }
+    
     func hideToolbars(_ hide:Bool){
         toolbarOutlet.isHidden = hide
         cameraStatus.isHidden = hide
         navigationBar.isHidden = hide
-    }
-    
-    struct Meme {
-        var topText: String
-        var bottomText: String
-        var originalImage: UIImage
-        var memedImage: UIImage
     }
 
     ///// check and disable the button if image is empty
@@ -223,12 +217,14 @@ class MemeGenerationViewController: UIViewController, UIImagePickerControllerDel
             cancelButtonOutlet.isEnabled = false
         }
     }
+    
     func setTextFieldAttributes(){
         self.topText.delegate =  self.topTextDelegate
         self.topTextDelegate.label = "TOP"
         self.bottomText.delegate = self.bottomTextDelegate
         self.bottomTextDelegate.label = "BOTTOM"
     }
+    
     // open an image picker
     func openImagePicker(_ type: UIImagePickerController.SourceType){
         let picker = UIImagePickerController()
